@@ -3,7 +3,7 @@ package main.java.mylib.datastructures.linear;
 import main.java.mylib.datastructures.nodes.DNode;
 
 
-public class CDLL {
+public class CDLL extends DLL{
     private DNode head;
     private int size;
 
@@ -166,6 +166,7 @@ public class CDLL {
        this.head.setData(0);
        this.head = head.getNext();
        size--;
+
     }
 
     /*
