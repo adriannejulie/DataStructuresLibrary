@@ -3,7 +3,7 @@ package main.java.mylib.datastructures.linear;
 
 import main.java.mylib.datastructures.nodes.SNode;
 
-public class CSLL {
+public class CSLL extends SLL{
     private SNode head;
     private int size;
 
@@ -198,13 +198,14 @@ public class CSLL {
 
     /*
      * deleteHead()
-     * Deletes the head node
+     * Deletes the head node and returns it
      * No params. Returns void.
      */
-    public void deleteHead() {
+    public SNode deleteHead() {
         if (this.head == null) {
-            return;
+            return null;
         }
+        SNode deletedNode = this.head;
         if (this.head.getNext() == this.head) { // if there is only one node in the list
             this.head = null;
         } else {
@@ -216,6 +217,7 @@ public class CSLL {
             currentNode.setNext(this.head);
         }
         size--;
+        return deletedNode;
     }
     
 

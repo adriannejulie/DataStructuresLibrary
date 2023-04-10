@@ -7,6 +7,8 @@ adriannejulia.lat@ucalgary.ca
 
 package main.java.mylib.datastructures.linear;
 
+import java.util.NoSuchElementException;
+
 import main.java.mylib.datastructures.nodes.SNode;
 
 public class SLL extends SNode{
@@ -31,6 +33,35 @@ public class SLL extends SNode{
     public SLL(SNode newNode) {
         this.head = newNode;
         size++;
+    }
+
+    /**
+     * Getter for private variable head
+     * @return head , a pointer to the head node
+     */
+    public SNode getHead() {
+        return this.head;
+    }
+
+    /**
+     * Getter for private variable size
+     * @return size , the number of nodes inside the list
+     */
+    public int getSize() {
+        return this.size;
+    }
+
+    /**
+     * Checks if the list is empty
+     * @return true if the size is 0
+     * @return false is the size is not 0
+     */
+    public boolean isEmpty(){
+        if (this.size == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /*
@@ -163,15 +194,18 @@ public class SLL extends SNode{
     /*
      * deleteHead()
      * Deletes the head node
-     * No params. Returns void.
+     * No params. Returns deleted node.
      */
-    public void deleteHead() {
-       if (this.head == null) {
-           return;
-       }
-       this.head.setData(0);
-       this.head = head.getNext();
-       size--;
+    public SNode deleteHead() {
+        if (head == null) {
+            // list is empty
+            throw new NoSuchElementException("List is empty");
+        }
+        SNode temp = head;
+        head = head.getNext();
+        temp.setNext(null); // remove reference to the next node
+        size--;
+        return temp;
     }
 
     /*
@@ -229,6 +263,7 @@ public class SLL extends SNode{
      * and the temporary node is less than the next node, the current and previous elements swap until it is in its corret position
      * No params. Returns void.
      */
+    
     public void sort() {
         if (head == null || head.getNext() == null) {
             return;
