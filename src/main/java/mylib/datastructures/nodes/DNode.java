@@ -1,42 +1,41 @@
-package main.java.mylib.datastructures.linear.nodes;
+package main.java.mylib.datastructures.nodes;
 
-public class DNode<T> extends SNode<T> {
+public class DNode  {
 
-    private DNode<T> previousNode;
-    private DNode<T> head;
-    private DNOde<T> tail;
+    private DNode prev;
+    private DNode next;
+    private int data;
 
-    public DNode(){
-        this.head = null;
-        this.tail = null;
+    public DNode() {
+        this.data = 0;
+        this.next = null;
+        this.prev = null;
+
     }
 
-    public DNode<T> getHead() {
-        return this.head;
+    public DNode (int data) {
+        this.prev = null;
+        this.next = null;
+        this.data = data;
     }
 
-    public void setHead(DNode<T> head) {
-        this.head = head;
+    public void setPrev(DNode node) {
+        this.prev = node;
+    }
+    public void setNext(DNode node) {
+        this.next = node;
+    }
+    public void setData(int data) {
+        this.data = data;
     }
 
-    public DNode<T> getTail() {
-        return this.tail;
+    public DNode getPrev() {
+        return this.prev;
     }
-
-    public void setTail(DNode<T> tail) {
-        this.tail = tail;
+    public DNode getNext() {
+        return this.next;
     }
-
-    public DNode (T value) {
-        super(value);
-        this.previousNode = null;
+    public int getData() {
+        return this.data;
     }
-    public void setPreviousNode(DNode<t> previousNode) {
-        this.previousNode = previousNode;
-    }
-
-    public DNode<T> getPreviousNode() {
-        return this.previousNode;
-    }
-    
 }
