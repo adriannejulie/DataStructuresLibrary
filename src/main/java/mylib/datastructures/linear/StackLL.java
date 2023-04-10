@@ -68,14 +68,15 @@ public class StackLL extends SLL {
     @Override
     public void sortedInsert(SNode node) {}
 
-    /** -- can this be implemented????
-     * Override search(node) from SLL with empty body
-     * searchnode) is not needed for a stack
+    /**
+     * search(node)
+     * @param node a node that is searched for in the list
+     * @return a node that was found
      */
-    @Override
     public SNode search(SNode node) {
-        return node;}
-    
+        return super.search(node);
+    }
+
     /**
      * Override deleteTail() from SLL with empty body
      * deleteTail() is not needed for a stack
@@ -90,40 +91,14 @@ public class StackLL extends SLL {
     @Override
     public void delete(SNode node){}
 
-    /**
-     * Uses bubble sort algorithm to sort elements into ascending order
-     * No returns. No Params
+     /*
+     * sort()
+     * Applies insertion sort to the list
+     * No params. Returns void.
      */
-    /* 
-    public void sort() {
-        if (isEmpty()) {
-            return;
-        }
-        
-        SNode curr = getHead();
-        SNode next;
-        boolean swapped;
-        
-        do {
-            swapped = false;
-            curr = getHead();
-            
-            while (curr.getNext() != null) {
-                next = curr.getNext();
-                
-                if ((int) curr.getData() > (int) next.getData()) {
-                    // swap data
-                    int temp = curr.getData();
-                    curr.setData(next.getData());
-                    next.setData(temp);
-                    
-                    swapped = true;
-                }
-                
-                curr = curr.getNext();
-            }
-        } while (swapped);
-    }*/
+    public void sort(){
+        super.sort();
+    }
 
     /**
      * clear()

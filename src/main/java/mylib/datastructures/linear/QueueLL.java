@@ -32,13 +32,14 @@ public class QueueLL extends SLL{
     @Override
     public void sortedInsert(SNode node) {}
 
-    /** -- can this be implemented????
-     * Override search(node) from SLL with empty body
-     * searchnode) is not needed for a stack
+    /**
+     * search(node)
+     * @param node a node that is searched for in the list
+     * @return a node that was found
      */
-    @Override
     public SNode search(SNode node) {
-        return node;}
+        return super.search(node);
+    }
     
     /**
      * Override deleteTail() from SLL with empty body
@@ -88,7 +89,15 @@ public class QueueLL extends SLL{
         return super.getHead();
     }
 
-    //can you sort a queue linked list?
+
+    /*
+     * sort()
+     * Applies insertion sort to the list
+     * No params. Returns void.
+     */
+    public void sort(){
+        super.sort();
+    }
 
     /**
      * clear()
