@@ -280,6 +280,7 @@ public class SLL extends SNode{
             if (traverse == current) {
                 // No need to insert, already in correct position
                 previous = current;
+                
             } else {// does this need to be there?
                 // Insert current node before the node at traverse
                 current.setNext(traverse);
