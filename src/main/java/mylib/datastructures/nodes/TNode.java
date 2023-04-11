@@ -38,25 +38,35 @@ public class TNode {
 
     /*Setters and Getters */
 
-    public void setBalance(int balance) {
+    public void setBalance(int balance) { this.balance = balance;}
+    public void setData(int data){this.data = data;}
+    public void setParent(TNode parent) {this.parent = parent;}
+    public void setRight(TNode right) {this.right = right;}
+    public void setLeft(TNode left) {this.left = left;}
+
+    public int getData(){return this.data;}
+    public TNode getLeft(){return this.left;}
+    public TNode getRight(){return this.right;}
+    public TNode getParent(){return this.parent;}
+    public int getBalance(){return this.balance;}
+
+
+    public String toString(){
+
+        return String.valueOf(this.data);
+        
+    } 
+
+    public void print(){
+
+        System.out.println("Node information:");
+        System.out.println(String.format("Node Data: %d", this.data));
+        System.out.println(String.format("Node Balance: %d", this.balance));
+        System.out.println(String.format("Node Parent's Data: %d", this.parent.data));
+
+
+        System.out.println(String.format("Node's Left Child's Data: %d", this.left.data));
+        System.out.println(String.format("Node's Right Child's Data: %d", this.right.data));
 
     }
-
-    public void setData(int data){
-
-    }
-
-    public void setParent(TNode parent) {
-
-    }
-
-    public void setRight(TNode right) {
-
-    }
-
-    public void setLeft(TNode left) {
-
-    }
-
-    public int 
 }
