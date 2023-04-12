@@ -1,3 +1,9 @@
+/**
+@author Adrianne Julia Lat
+adriannejulia.lat@ucalgary.ca
+@version 1.1
+@since 1.0
+*/
 package main.java.mylib.datastructures.linear;
 import main.java.mylib.datastructures.nodes.SNode;
 
