@@ -53,7 +53,7 @@ public class GraphTest{
         }
         catch(Exception e){ passed = false;}
 
-        assertTrue("Search Method does not work", passed)
+        assertTrue("Search Method does not work", passed);
     }
 
 
