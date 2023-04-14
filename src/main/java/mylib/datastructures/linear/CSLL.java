@@ -4,9 +4,9 @@ adriannejulia.lat@ucalgary.ca
 @version 1.2
 @since 1.0
 */
-package main.java.mylib.datastructures.linear;
+package mylib.datastructures.linear;
 
-import main.java.mylib.datastructures.nodes.SNode;
+import mylib.datastructures.nodes.SNode;
 
 public class CSLL extends SLL{
 

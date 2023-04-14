@@ -4,8 +4,8 @@ adriannejulia.lat@ucalgary.ca
 @version 1.1
 @since 1.0
 */
-package main.java.mylib.datastructures.linear;
-import main.java.mylib.datastructures.nodes.SNode;
+package mylib.datastructures.linear;
+import mylib.datastructures.nodes.SNode;
 
 
 public class StackLL extends SLL {

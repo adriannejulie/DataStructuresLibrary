@@ -1,6 +1,7 @@
-package main.java.mylib.datastructures.trees;
+package mylib.com.example;
 
-import main.java.mylib.datastructures.nodes.TNode;
+import mylib.datastructures.nodes.TNode;
+import mylib.datastructures.trees.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,20 +17,44 @@ public class GraphTest{
     public void testConstructors(){
 
 
+        
         boolean passed = true;
         try{
+
+            TNode zeroNode = new TNode();
+
             TNode oneNode = new TNode(1,0,null,null,null);
+
             TNode twoNode = new TNode(2, 0, null, null, null);
+
             TNode threeNode = new TNode(3, 0, oneNode, null, null);
+
             BST binaryTreeNoArg = new BST();
+
             BST binaryTreeValArg = new BST(4);
+
             BST binaryTreeNodeArg = new BST(twoNode);
+
             AVL avlTreeNoArg = new AVL();
+
             AVL avlTreeValArg = new AVL(4);
+
             AVL avlTreeNodeArgSingle = new AVL(twoNode);
+
+
+
+            System.out.println(oneNode.getRight().toString());
+            if (oneNode.getLeft() == null){
+                AVL test = new AVL();
+                System.out.println(test.convertBSTToAVL(oneNode));
+                System.out.println("YAU");
+            }
+
             AVL avlTreeNodeArgBalance = new AVL(oneNode);
+            System.out.println("K");
         }
         catch(Exception e){
+            System.out.println(e);
             passed = false;
         }
 

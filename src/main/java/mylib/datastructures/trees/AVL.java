@@ -6,9 +6,9 @@ braden.vivas@ucalgary.ca
 
 */
 
-package main.java.mylib.datastructures.trees;
+package mylib.datastructures.trees;
 
-import main.java.mylib.datastructures.nodes.TNode;
+import mylib.datastructures.nodes.TNode;
 
 public class AVL extends BST{
    
@@ -44,17 +44,19 @@ public class AVL extends BST{
     }
 
 
-    public static TNode convertBSTToAVL(TNode root) {
+    public TNode convertBSTToAVL(TNode root) {
         if (root == null) {
             return null;
         }
         
         // Step 1: Convert the getLeft() and getRight() subtrees to AVL trees
         root.setLeft(convertBSTToAVL(root.getLeft()));
+
         root.setRight(convertBSTToAVL(root.getRight()));
         
         // Step 2: Rebalance the current node
         int balanceFactor = getBalanceFactor(root);
+        root.setBalance(balanceFactor);
         
         if (balanceFactor > 1) {
             if (getBalanceFactor(root.getLeft()) < 0) {

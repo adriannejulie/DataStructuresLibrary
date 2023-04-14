@@ -1,0 +1,107 @@
+# Created at 2023-04-14T11:56:58.081
+java.lang.Error: Unresolved compilation problems: 
+	The declared package "main.java.mylib.datastructures.trees" does not match the expected package ""
+	The import main cannot be resolved
+	The import org.junit cannot be resolved
+	The import org.junit cannot be resolved
+	The import org.junit cannot be resolved
+	Test cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	BST cannot be resolved to a type
+	BST cannot be resolved to a type
+	BST cannot be resolved to a type
+	BST cannot be resolved to a type
+	BST cannot be resolved to a type
+	BST cannot be resolved to a type
+	AVL cannot be resolved to a type
+	AVL cannot be resolved to a type
+	AVL cannot be resolved to a type
+	AVL cannot be resolved to a type
+	AVL cannot be resolved to a type
+	AVL cannot be resolved to a type
+	AVL cannot be resolved to a type
+	AVL cannot be resolved to a type
+	The method assertTrue(String, boolean) is undefined for the type GraphTest
+	Test cannot be resolved to a type
+	BST cannot be resolved to a type
+	BST cannot be resolved to a type
+	The method assertTrue(String, boolean) is undefined for the type GraphTest
+	Test cannot be resolved to a type
+	BST cannot be resolved to a type
+	BST cannot be resolved to a type
+	The method assertTrue(String, boolean) is undefined for the type GraphTest
+	Test cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	BST cannot be resolved to a type
+	BST cannot be resolved to a type
+	The method assertTrue(String, boolean) is undefined for the type GraphTest
+	Test cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	BST cannot be resolved to a type
+	BST cannot be resolved to a type
+	The method assertTrue(String, boolean) is undefined for the type GraphTest
+	Test cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	BST cannot be resolved to a type
+	BST cannot be resolved to a type
+	The method assertTrue(String, boolean) is undefined for the type GraphTest
+	Test cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	BST cannot be resolved to a type
+	BST cannot be resolved to a type
+	The method assertTrue(String, boolean) is undefined for the type GraphTest
+	Test cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	TNode cannot be resolved to a type
+	AVL cannot be resolved to a type
+	AVL cannot be resolved to a type
+	The method assertTrue(String, boolean) is undefined for the type GraphTest
+
+	at GraphTest.<init>(GraphTest.java:1)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/java.lang.Class.newInstance(Class.java:584)
+	at org.apache.maven.surefire.junit.PojoTestSet.<init>(PojoTestSet.java:68)
+	at org.apache.maven.surefire.junit.JUnit3Provider.createTestSet(JUnit3Provider.java:127)
+	at org.apache.maven.surefire.junit.JUnit3Provider.invoke(JUnit3Provider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+

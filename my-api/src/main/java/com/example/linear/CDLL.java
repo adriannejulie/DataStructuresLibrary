@@ -4,9 +4,9 @@ adriannejulia.lat@ucalgary.ca
 @version 1.2
 @since 1.0
 */
-package main.java.mylib.datastructures.linear;
+package mylib.datastructures.linear;
 
-import main.java.mylib.datastructures.nodes.DNode;
+import mylib.datastructures.nodes.DNode;
 
 
 public class CDLL extends DLL{

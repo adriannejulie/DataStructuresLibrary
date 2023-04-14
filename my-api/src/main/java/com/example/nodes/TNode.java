@@ -1,4 +1,4 @@
-package main.java.mylib.datastructures.nodes;
+package mylib.datastructures.nodes;
 
 public class TNode {
     private int data;
@@ -32,19 +32,21 @@ public class TNode {
         this.data = data;
         this.parent = P;
 
-        if (P.getData() >= data){
+        if (P != null && P.getData() >= data){
 
-            P.setRight(this);
+            P.setLeft(this);
         }
-        else{
+        else if (P != null && P.getData() < data){
 
             P.setRight(this);
         }
 
         this.left = L;
-        L.setParent(this);
+        if (L != null){
+        L.setParent(this);}
         this.right= R;
-        R.setParent(this);
+        if(R != null){
+        R.setParent(this); }
         this.balance = balance;
     }
 
@@ -53,8 +55,8 @@ public class TNode {
     public void setBalance(int balance) { this.balance = balance;}
     public void setData(int data){this.data = data;}
     public void setParent(TNode parent) {this.parent = parent;}
-    public void setRight(TNode right) {this.right = right; right.setParent(this);}
-    public void setLeft(TNode left) {this.left = left; left.setParent(this);}
+    public void setRight(TNode right) {this.right = right;}
+    public void setLeft(TNode left) {this.left = left; }
 
     public int getData(){return this.data;}
     public TNode getLeft(){return this.left;}
