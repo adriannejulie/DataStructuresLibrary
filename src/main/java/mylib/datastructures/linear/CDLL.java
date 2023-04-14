@@ -10,8 +10,6 @@ import main.java.mylib.datastructures.nodes.DNode;
 
 
 public class CDLL extends DLL{
-    private DNode head;
-    private int size;
 
     /*
      * Constructor
@@ -19,8 +17,8 @@ public class CDLL extends DLL{
      * Creates a null head dobject
      */
     public CDLL(){
-        this.head = null;
-        this.size = 0;
+        super.head = null;
+        super.size = 0;
        
     }
 
@@ -29,8 +27,8 @@ public class CDLL extends DLL{
      * Node object as a param
      */
     public CDLL(DNode newNode) {
-        this.head = newNode;
-        size++;
+        super.head = newNode;
+        super.size++;
     }
 
     /*
@@ -41,13 +39,13 @@ public class CDLL extends DLL{
      * Returns void.
      */
     public void insertHead(DNode node) {
-      if (head == null) {
-            this.head = node;
-            size++;
+      if (super.head == null) {
+            super.head = node;
+            super.size++;
       } else {
             node.setNext(head); //node's next pointer will point to what head is pointing to
-            this.head = node; //head will now point to the new node
-            size++;
+            super.head = node; //head will now point to the new node
+            super.size++;
       }
     }
 
@@ -62,17 +60,17 @@ public class CDLL extends DLL{
      * Returns void.
      */
     public void insertTail(DNode node) {
-        if (this.head == null) {
-            this.head = node;
-            size++;
+        if (super.head == null) {
+            super.head = node;
+            super.size++;
             return;
         } else {
-            DNode currentNode = head; //currentNode = the node head is pointing to
+            DNode currentNode = super.head; //currentNode = the node head is pointing to
             while (currentNode.getNext() != null) {
                 currentNode = currentNode.getNext(); //traverse the linked list
             }
             currentNode.setNext(node); //once the next node of currentNode == null, then node is assigned as the next node
-            size++;
+            super.size++;
         }
     }
 
@@ -87,20 +85,20 @@ public class CDLL extends DLL{
      * Returns Void. 
      */
     public void insert(DNode node, int position) {
-        if (this.head == null) {
-            this.head = node;
-            size++;
+        if (super.head == null) {
+            super.head = node;
+            super.size++;
             return;
         } else if (position < 0) {
             throw new IndexOutOfBoundsException("Input position cannot be less than 0.");
         } else if (position == 0) {
-            node.setNext(head); //sets the next node of node to the node head is pointing to
-            this.head = node; //sets head to point to the new node
-            size++;
+            node.setNext(super.head); //sets the next node of node to the node head is pointing to
+            super.head = node; //sets head to point to the new node
+            super.size++;
             return;
         }
 
-        DNode currentNode = head; //currentNode = the node head is pointing to
+        DNode currentNode = super.head; //currentNode = the node head is pointing to
         int currentPosition = 0;
         while ( currentNode != null && currentPosition < position - 1) {
             currentNode = currentNode.getNext();
@@ -111,7 +109,7 @@ public class CDLL extends DLL{
         }
         node.setNext(currentNode.getNext());
         currentNode.setNext(node);
-        size++;
+        super.size++;
     }
 
 
@@ -125,19 +123,19 @@ public class CDLL extends DLL{
      * Returns void.
      */
     public void sortedInsert(DNode node) {
-        if (head == null || node.getData() < head.getData()) { //if list is empty, insert node
-            node.setNext(head);
-            this.head = node;
-            size++;
+        if (super.head == null || node.getData() < head.getData()) { //if list is empty, insert node
+            node.setNext(super.head);
+            super.head = node;
+            super.size++;
             return;
         }
-        DNode currentNode = this.head;
+        DNode currentNode = super.head;
         while (currentNode.getNext() != null && currentNode.getNext().getData() < node.getData()) { //ensures list is in ascending order
             currentNode = currentNode.getNext(); //traverse list while the next node is not null and the value of the next node is less than the value of the new node
         }
         node.setNext(currentNode.getNext());
         currentNode.setNext(node);
-        size++;
+        super.size++;
     }
 
     /**
@@ -150,7 +148,7 @@ public class CDLL extends DLL{
      * 
      */
     public DNode search(DNode node) {
-        DNode currentNode = this.head;
+        DNode currentNode = super.head;
         while (currentNode != null) {
             if (currentNode.getData() == node.getData()) {
                 return currentNode;
@@ -166,12 +164,12 @@ public class CDLL extends DLL{
      * No params. Returns void.
      */
     public void deleteHead() {
-       if (this.head == null) {
+       if (super.head == null) {
            return;
        }
-       this.head.setData(0);
-       this.head = head.getNext();
-       size--;
+       super.head.setData(0);
+       super.head = super.head.getNext();
+       super.size--;
 
     }
 
@@ -184,17 +182,17 @@ public class CDLL extends DLL{
      * No params. Returns void.
      */
     public void deleteTail() {
-      if (head == null || head.getNext() == null) {
-          this.head = null;
-          size--;
+      if (super.head == null || head.getNext() == null) {
+          super.head = null;
+          super.size--;
           return;
       }
-      DNode currentNode = this.head;
+      DNode currentNode = super.head;
       while (currentNode.getNext().getNext() != null) {
           currentNode = currentNode.getNext(); //traverses list until it gets to the second last node
       }
       currentNode.setNext(null); //when currentNode is the second last node, it sets the next node to null
-      size--;
+      super.size--;
       sort();
     }
 
@@ -204,15 +202,15 @@ public class CDLL extends DLL{
      * Returns void.
      */
     public void delete(DNode node){
-        if (head == null) {
+        if (super.head == null) {
             return;
         }
-        if (this.head == node){
-            head = head.getNext();
-            size--;
+        if (super.head == node){
+            super.head = super.head.getNext();
+            super.size--;
             return;
         }
-        DNode currentNode = this.head;
+        DNode currentNode = super.head;
         while (currentNode != null && currentNode.getNext() != node){
             currentNode = currentNode.getNext();
         }
@@ -231,14 +229,14 @@ public class CDLL extends DLL{
      * No params. Returns void.
      */
     public void sort() {
-        if (head == null || head.getNext() == null) {
+        if (super.head == null || super.head.getNext() == null) {
             return;
         }
-        DNode current = head.getNext();
+        DNode current = super.head.getNext();
         while (current != null) {
             DNode temp = current.getNext();
             DNode previous = null;
-            DNode traverse = this.head;
+            DNode traverse = super.head;
             while (traverse != current && traverse.getData() < current.getData()) {
                 previous = traverse;
                 traverse = traverse.getNext();
@@ -261,8 +259,8 @@ public class CDLL extends DLL{
      * No params. Returns void.
      */
     public void clear(){
-        this.head = null;
-        this.size = 0;
+        super.head = null;
+        super.size = 0;
     }
 
     /*
@@ -274,10 +272,10 @@ public class CDLL extends DLL{
      * List Content
      */
     public void print() {
-        System.out.println("Length of List: " + size);
+        System.out.println("Length of List: " + super.size);
         boolean sorted = true;
-        DNode current = head;
-        current = head;
+        DNode current = super.head;
+        current = super.head;
         while (current != null && current.getNext() != null) {
             if (current.getData() > current.getNext().getData()) {
                 sorted = false;
@@ -291,7 +289,7 @@ public class CDLL extends DLL{
             System.out.println("List is not sorted");
         }
         // Print the contents of the list
-        current = head;
+        current = super.head;
         System.out.print("List content: ");
         while (current != null) {
             System.out.print(current.getData() + " ");

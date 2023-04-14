@@ -12,8 +12,8 @@ import java.util.NoSuchElementException;
 import main.java.mylib.datastructures.nodes.SNode;
 
 public class SLL extends SNode{
-    private SNode head;
-    private int size;
+    protected SNode head;
+    protected int size;
 
     /*
      * Constructor
@@ -264,31 +264,32 @@ public class SLL extends SNode{
      * No params. Returns void.
      */
     
-    public void sort() {
+     public void sort() {
         if (head == null || head.getNext() == null) {
             return;
         }
         SNode current = head.getNext();
+        head.setNext(null);
         while (current != null) {
             SNode temp = current.getNext();
             SNode previous = null;
             SNode traverse = this.head;
-            while (traverse != current && traverse.getData() < current.getData()) {
+            while (traverse != null && traverse.getData() < current.getData()) {
                 previous = traverse;
                 traverse = traverse.getNext();
             }
-            if (traverse == current) {
-                // No need to insert, already in correct position
-                previous = current;
-                
-            } else {// does this need to be there?
-                // Insert current node before the node at traverse
-                current.setNext(traverse);
+            if (previous == null) {
+                current.setNext(head);
+                head = current;
+            } else {
                 previous.setNext(current);
+                current.setNext(traverse);
             }
             current = temp;
         }
     }
+    
+    
 
     /*
      * clear()

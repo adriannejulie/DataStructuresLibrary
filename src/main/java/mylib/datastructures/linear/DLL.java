@@ -11,9 +11,9 @@ import main.java.mylib.datastructures.nodes.DNode;
 
 public class DLL extends DNode{
     
-    private DNode head;
+    protected DNode head;
     private DNode tail;
-    private int size;
+    protected int size;
 
     /*
      * Constructor
@@ -21,12 +21,10 @@ public class DLL extends DNode{
      * Creates a null head dobject
      */
     public DLL(){
-        this.head = null;
-        this.tail = null;
-        
+        this.head = new DNode();
+        this.tail = new DNode();
         this.head.setNext(tail);
         this.tail.setPrev(head);
-
         this.size = 0;
        
     }
@@ -76,17 +74,17 @@ public class DLL extends DNode{
      * finally, the tail is pointed to the new node
      */
     public void insertTail(DNode node) {
-        if (this.tail == null) {
+        if (this.head == null) {
             this.head = node;
             this.tail = node;
             size++;
             return;
         } else {
-           this.tail.setNext(node); 
-           node.setPrev(tail);
-           node.setNext(head);
-           this.head.setPrev(node);
-           this.tail = node;
+            this.tail.setNext(node); 
+            node.setPrev(tail);
+            node.setNext(null);
+            this.tail = node;
+            
             size++;
         }
     }
@@ -148,7 +146,7 @@ public class DLL extends DNode{
             this.tail = node;
         }else if (node.getData() < head.getData()) { 
             node.setNext(head);
-            node.setPrev(node);
+            head.setPrev(node); // set the previous node to the new node, not the node itself
             this.head = node;
         } else {
             DNode currentNode = head;
@@ -166,6 +164,7 @@ public class DLL extends DNode{
         }
         size++;
     }
+    
     
 
     /**
@@ -211,27 +210,26 @@ public class DLL extends DNode{
     }
 
     /*
-     * deleteTail()
-     * Deletes the tail node
-     * No params. Returns void.
-     */
-    public void deleteTail() {
-      if (head == null) {
+ * deleteTail()
+ * Deletes the tail node
+ * No params. Returns void.
+ */
+public void deleteTail() {
+    if (head == null) {
         return;
-      } else if (head.getNext() == null) {
-          this.head = null;
-      } else {
-        DNode tail = head.getPrev();
+    } else if (head.getNext() == null) {
+        this.head = null;
+        this.tail = null;
+    } else {
         DNode secondToLastNode = tail.getPrev();
-        secondToLastNode.setNext(head);
-        head.setPrev(secondToLastNode);
         tail.setPrev(null);
         tail.setNext(null);
-      }
+        secondToLastNode.setNext(null);
         size--;
-        sort();
         
     }
+}
+
 
     /*
      * delete(node)
@@ -348,4 +346,27 @@ public class DLL extends DNode{
 
     }
 
+    /**
+     * Getter for head
+     * @return DNode object head
+     */
+    public DNode getHead(){
+        return this.head;
+    }
+
+    /**
+     * Getter for head
+     * @return DNode object head
+     */
+    public DNode getTail(){
+        return this.tail;
+    }
+
+    /**
+     * Getter for head
+     * @return DNode object head
+     */
+    public int getSize(){
+        return this.size;
+    }
 }
