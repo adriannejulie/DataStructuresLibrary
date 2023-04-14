@@ -76,7 +76,7 @@
               <manifest>
                 <addClasspath>true</addClasspath>
                 <classpathPrefix>lib/</classpathPrefix>
-                <mainClass>com.example.my-api</mainClass>
+                <mainClass>com.example.MyApi</mainClass>
               </manifest>
             </archive>
           </configuration>
