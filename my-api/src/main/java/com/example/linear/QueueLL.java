@@ -4,10 +4,10 @@ adriannejulia.lat@ucalgary.ca
 @version 1.1
 @since 1.0
 */
-package main.java.mylib.datastructures.linear;
+package mylib.datastructures.linear;
 import java.util.NoSuchElementException;
 
-import main.java.mylib.datastructures.nodes.SNode;
+import mylib.datastructures.nodes.SNode;
 
 
 public class QueueLL extends SLL{

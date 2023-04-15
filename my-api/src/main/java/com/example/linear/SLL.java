@@ -5,11 +5,11 @@ adriannejulia.lat@ucalgary.ca
 @since 1.0
 */
 
-package main.java.mylib.datastructures.linear;
+package mylib.datastructures.linear;
 
 import java.util.NoSuchElementException;
 
-import main.java.mylib.datastructures.nodes.SNode;
+import mylib.datastructures.nodes.SNode;
 
 public class SLL extends SNode{
     protected SNode head;

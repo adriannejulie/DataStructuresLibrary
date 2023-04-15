@@ -1,7 +1,8 @@
-package main.java.mylib.datastructures.linear;
+package mylib.com.example;
 
-import main.java.mylib.datastructures.nodes.DNode;
-import main.java.mylib.datastructures.nodes.SNode;
+import mylib.datastructures.nodes.DNode;
+import mylib.datastructures.nodes.SNode;
+import mylib.datastructures.linear.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

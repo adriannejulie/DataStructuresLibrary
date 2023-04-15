@@ -8,9 +8,9 @@ braden.vivas@ucalgary.ca
 
 
 
-package main.java.mylib.datastructures.trees;
+package mylib.datastructures.trees;
 
-import main.java.mylib.datastructures.nodes.TNode;
+import mylib.datastructures.nodes.TNode;
 
 /*
  * BST is a class that defines a Binary Search Tree. 
